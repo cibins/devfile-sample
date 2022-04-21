@@ -1,6 +1,6 @@
 # Install the app dependencies in a full Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-14:latest
-
+FROM registry.access.redhat.com/ubi8/nginx-118:latest
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
