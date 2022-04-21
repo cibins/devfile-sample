@@ -4,11 +4,13 @@ FROM registry.access.redhat.com/ubi8/nginx-118:latest
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install app dependencies
-# RUN npm install
 
 # Copy the dependencies into a Slim Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
+
+# Install app dependencies
+RUN npm install
+
 
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
