@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/ubi8/nginx-118:latest
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install --production
+RUN npm install
 
 # Copy the dependencies into a Slim Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
